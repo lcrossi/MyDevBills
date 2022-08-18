@@ -12,4 +12,4 @@ import NewEntry from './src/Pages/NewEntry';
 import Report from './src/Pages/Report';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Report);
+AppRegistry.registerComponent(appName, () => App);
