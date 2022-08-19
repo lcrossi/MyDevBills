@@ -2,7 +2,7 @@ import { View, Text, FlatList, StyleSheet } from 'react-native';
 import React from 'react';
 import EntryListItem from './EntryListItem';
 
-export default function EntryList() {
+export default function EntryList({entries}) {
   return (
     <View>
         <EntryListItem />
@@ -12,12 +12,12 @@ export default function EntryList() {
         </Text>
 
         <FlatList
-            data={[
-            {key: 'Padaria Asa Branca: $ 15,00'},
-            {key: 'Sonda Supermercado: $ 80,00'},
-            {key: 'Posto Ipiranga: $ 12,00'},
-            ]}
-            renderItem={({item}) => <Text>{item.key}</Text>}
+            data={entries}
+            renderItem={({item}) => (
+                <Text style={styles.entry}>
+                    {item.description} - ${item.amount}
+                </Text>
+            )}
         />
     </View>
   )
@@ -32,5 +32,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 10,
         marginBottom: 10,
+    },
+    entry: {
+        
     }
 })

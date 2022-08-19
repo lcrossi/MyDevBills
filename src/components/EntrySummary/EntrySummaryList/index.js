@@ -1,19 +1,17 @@
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import React from 'react';
 
-export default function EntrySummaryList() {
+export default function EntrySummaryList({entriesGrouped}) {
   return (
     <View style={styles.container}>
         <Text style={styles.title}>Categorias</Text>
         <FlatList
-            data={[
-            {key: 'Alimentação: $ 200,00'},
-            {key: 'Combustível: $ 12,00'},
-            {key: 'Aluguel: $ 120,00'},
-            {key: 'Lazer: $ 250,00'},
-            {key: 'Outros: $ 1200,00'},
-            ]}
-            renderItem={({item}) => <Text>{item.key}</Text>}
+            data={entriesGrouped}
+            renderItem={({item}) => 
+                <Text style={styles.entry}>
+                    {item.description} - {item.amount}
+                </Text>
+            }
         />
     </View>
   )

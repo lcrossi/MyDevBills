@@ -3,11 +3,11 @@ import React from 'react';
 import EntrySummaryChart from './EntrySummaryChart';
 import EntrySummaryList from './EntrySummaryList';
 
-export default function EntrySummary() {
+export default function EntrySummary({entriesGrouped}) {
   return (
     <View style={styles.container}>
         <EntrySummaryChart />
-        <EntrySummaryList />
+        <EntrySummaryList entriesGrouped={entriesGrouped}/>
     </View>
   )
 }

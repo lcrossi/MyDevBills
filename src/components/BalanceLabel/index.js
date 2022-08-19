@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
-export default function BalanceLabel() {
+export default function BalanceLabel({currentBalance}) {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Saldo atual</Text>
-      <Text style={styles.value}>$ 1.345,54</Text>
+      <Text style={styles.value}>{currentBalance}</Text>
     </View>
   )
 }
