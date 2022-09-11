@@ -1,12 +1,19 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, Button, StyleSheet} from 'react-native';
+import { View, Button, StyleSheet } from 'react-native';
 import BalancePanel from '../../components/BalancePanel';
 import EntrySummary from '../../components/EntrySummary';
 import EntryList from '../../components/EntryList';
+import { saveEntry } from '../../services/Entries';
+
+//() => navigation.navigate('NewEntry')
 
 const Main = ({navigation}) => {
   const currentBalance = 2084.39
+
+  const save = () => {
+    saveEntry();
+  }
 
   const entries = [
     {key: '1', description: 'Padaria Asa Branca ', amount: 12},
@@ -27,7 +34,7 @@ const Main = ({navigation}) => {
       <BalancePanel currentBalance={currentBalance}/>
       <Button 
         title="Adicionar" 
-        onPress={() => navigation.navigate('NewEntry')}/>
+        onPress={save}/>
       <EntrySummary entriesGrouped={entriesGrouped}/>
       <EntryList entries={entries}/>
     </View>
