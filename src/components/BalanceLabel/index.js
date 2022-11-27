@@ -16,9 +16,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     label: {
-        fonSize: 12,
+        fontSize: 12,
     },
     value: {
-        fonSize: 18,
+        fontSize: 18,
     },
 })
